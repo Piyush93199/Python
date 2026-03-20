@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Project specifics
+# Ignore all CSV files in data/ directory
+data/*.csv
+# But keep the .gitkeep file
+!data/.gitkeep
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.orig
