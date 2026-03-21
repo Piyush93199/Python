@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?style=for-the-badge&logo=python)
 ![Specialization](https://img.shields.io/badge/Focus-AI%20%2F%20ML-orange.svg?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
-![Course](https://img.shields.io/badge/Degree-BCA%20(Sem%204)-red.svg?style=for-the-badge)
+![Degree](https://img.shields.io/badge/Degree-BCA-red.svg?style=for-the-badge)
 
 Welcome to my central repository for **Artificial Intelligence and Machine Learning** development. This space serves as a technical portfolio where I document my journey of building ML tools, mathematical libraries, and data processing algorithms from the ground up.
 
@@ -17,13 +17,15 @@ Welcome to my central repository for **Artificial Intelligence and Machine Learn
 
 ---
 
-## 📂 Repository Structure
-The projects within this repository are organized by their role in the AI/ML lifecycle:
+## 📂 Project Gallery
+This repository is organized into specialized modules representing different stages of the AI/ML lifecycle:
 
-* **/Mathematical-Logic**: Custom implementations of Matrix operations and Linear Algebra.
-* **/Data-Preprocessing**: Tools for handling missing values, encoding, and feature scaling.
-* **/Exploratory-Analysis**: Scripts for automated data visualization and insight generation.
-* **/Practice-Algorithms**: Implementation of supervised and unsupervised learning models.
+| Module | Description | Key Tech |
+| :--- | :--- | :--- |
+| **[Outlier_Detector](./Outlier_Detector)** | Statistical anomaly detection using IQR method. | Pandas, Matplotlib |
+| **[Loss_Visualizer](./Loss_Visualizer)** | Comparison of MSE vs MAE penalty curves. | NumPy, Matplotlib |
+| **Data-Preprocessing** | Standard Scalers, Label Encoders, and Imputers. | NumPy, Pandas |
+| **Mathematical-Logic** | Matrix operations and Linear Algebra from scratch. | Python Logic |
 
 ---
 
@@ -31,14 +33,6 @@ The projects within this repository are organized by their role in the AI/ML lif
 * **Languages:** Python 🐍
 * **Libraries:** NumPy, Pandas, Matplotlib, Seaborn, CustomTkinter.
 * **Tools:** Git/GitHub, Linux (Arch/MacOS-themed setup), VS Code.
-
----
-
-## 📈 Roadmap
-- [x] Complete core Preprocessing Suite (5 projects).
-- [ ] Implement Outlier Detection & Feature Selection modules.
-- [ ] Build a Neural Network from scratch using only NumPy.
-- [ ] Deploy a project using a lightweight Web Framework (Streamlit/Flask).
 
 ---
 
