@@ -10,8 +10,10 @@ from PyQt5.QtWidgets import (
     QFileDialog,
     QHBoxLayout,
     QListWidget,
-    QStackedWidget,
 )
+
+from gui.widgets.animated_stack import AnimatedStackedWidget
+from gui.widgets.animated_label import AnimatedMessageLabel
 
 from gui.widgets.control_panel import (
     SummaryPanel,
@@ -120,33 +122,12 @@ class Dashboard(QMainWindow):
         self.undo_button.clicked.connect(self.undo_last_action)
         top_bar.addWidget(self.undo_button)
 
-        # Booting dark by default, so text says Light Mode
-        self.theme_button = QPushButton("Light Mode")
-        self.theme_button.setFixedWidth(150)
-        self.theme_button.clicked.connect(self.toggle_theme)
-        top_bar.addWidget(self.theme_button)
+
 
         layout.addLayout(top_bar)
 
         # ---- MESSAGE BANNER ----
-
-        self.message_label = QLabel()
-
-        self.message_label.setVisible(False)
-
-        self.message_label.setAlignment(Qt.AlignCenter)
-
-        self.message_label.setStyleSheet(
-            """
-            background-color: #2ecc71;
-            color: white;
-            font-weight: bold;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 14px;
-            """
-        )
-
+        self.message_label = AnimatedMessageLabel()
         layout.addWidget(self.message_label)
 
         # ---- TABLE ----
@@ -162,7 +143,7 @@ class Dashboard(QMainWindow):
         self.sidebar.setFixedWidth(220)
         self.sidebar.setObjectName("Sidebar")
 
-        self.stacked_widget = QStackedWidget()
+        self.stacked_widget = AnimatedStackedWidget()
 
         bottom_layout.addWidget(self.sidebar)
         bottom_layout.addWidget(self.stacked_widget)
@@ -345,13 +326,6 @@ class Dashboard(QMainWindow):
                     self.dataframe.columns.tolist()
                 )
 
-    def toggle_theme(self):
-        if self.theme_manager:
-            self.theme_manager.toggle_theme()
-            if self.theme_manager.is_dark:
-                self.theme_button.setText("Light Mode")
-            else:
-                self.theme_button.setText("Dark Mode")
 
     def apply_imputation(self):
     
@@ -552,35 +526,7 @@ class Dashboard(QMainWindow):
         )
 
     def show_message(self, message, msg_type="success"):
-
-        colors = {
-            "success": "#2ecc71",
-            "error": "#e74c3c",
-            "warning": "#f39c12",
-            "info": "#3498db",
-        }
-
-        color = colors.get(msg_type, "#2ecc71")
-
-        self.message_label.setStyleSheet(
-            f"""
-            background-color: {color};
-            color: white;
-            font-weight: bold;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 14px;
-            """
-        )
-
-        self.message_label.setText(message)
-
-        self.message_label.setVisible(True)
-
-        QTimer.singleShot(
-            3000,
-            lambda: self.message_label.setVisible(False)
-        )
+        self.message_label.show_animated_message(message, msg_type)
 
     def apply_scaling(self):
 

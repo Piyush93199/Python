@@ -6,7 +6,9 @@ from PyQt5.QtWidgets import (
     QPushButton,
     QComboBox,
     QHBoxLayout,
+    QGraphicsOpacityEffect,
 )
+from PyQt5.QtCore import QPropertyAnimation, QEasingCurve
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 from visualization.plots import (
