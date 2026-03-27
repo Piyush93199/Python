@@ -11,6 +11,8 @@ DataPrep Studio is a powerful, desktop-based GUI application built with Python a
 * **Outlier Detection & Removal**: Detect and highlight anomalies utilizing `IQR` bounds or `Z-Score` thresholds.
 * **Native Embedded Visualization**: Generate and view analytical diagrams (Histograms, Boxplots, and Correlation Heatmaps) via a fully-embedded matplotlib canvas. Retrieve past plots easily using the Plot History dropdown.
 * **Train-Test Splitting**: Effortlessly split clean data and define custom seeds/test sizes.
+* **Fluid UI & Animations**: Enjoy smooth panel transitions and animated message notifications in a clean, modern Light Mode aesthetic.
+* **Synthetic Dataset Generator**: Create customizable sample datasets to test various data cleaning scenarios.
 * **Data Exporting**: Save your final, clean datasets back to `.csv` or `.xlsx` files.
 
 ## 🛠️ Installation
@@ -30,6 +32,11 @@ DataPrep Studio is a powerful, desktop-based GUI application built with Python a
 Make sure your virtual environment is activated, then simply run the main application file:
 ```bash
 python main.py
+```
+
+To generate a synthetic testing dataset with mixed data types, missing values, and outliers:
+```bash
+python data/generate_dataset.py --rows 1000 --output data/sample_dataset.csv
 ```
 
 ## 📁 Project Structure

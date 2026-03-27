@@ -25,6 +25,8 @@ logs/*.log
 !logs/.gitkeep
 data/*.csv
 data/*.xlsx
+# Ignore default synthetic dataset output
+sample_dataset.csv
 !data/.gitkeep
 
 # IDEs
